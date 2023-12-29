@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package ro.tapify.v1;
+
+service UserService {
+    rpc GetMetadata(GetMetadataRequest) returns (stream GetMetadataResponse) {}
+}
+
+
+message GetMetadataRequest {
+    string user_id = 1;
+}
+
+message GetMetadataResponse {
+    bool open_transaction=1;
+    int64 date_of_birth=2;   
+}
