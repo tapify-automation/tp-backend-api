@@ -4,8 +4,8 @@ package ro.tapify.v1;
 
 service TransactionSergice {
     rpc InitTransaction(InitTransactionRequest) returns (InitTransactionResponse) {}
+    rpc CloseTransaction(CloseTransactionRequest) returns (CloseTransactionResponse) {}
     rpc GetConsumtion(GetConsumtionRequest) returns (stream GetConsumtionResponse) {}
-
 }
 
 message InitTransactionRequest {
@@ -20,6 +20,12 @@ message InitTransactionResponse {
     string transaction_status = 2;
     string transaction_message = 3;
 }
+
+message CloseTransactionRequest {
+    string transaction_id = 2;
+}
+
+message CloseTransactionResponse {}
 
 message GetConsumtionRequest {
     string user_id = 2;

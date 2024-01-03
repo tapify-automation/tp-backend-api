@@ -1,0 +1,26 @@
+syntax="proto3";
+
+package ro.tapify.v1;
+
+service AuthenticationService {
+    rpc AuthenticateTenant(AuthenticateTenantRequest) returns (AuthenticateTenantResponse) {}
+    rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse) {}
+}
+
+message AuthenticateTenantRequest {
+    string tenant_id = 1;
+    string tenant_secret = 2;
+}
+
+message AuthenticateTenantResponse {
+    string token = 1;
+}
+
+message AuthenticateUserRequest {
+    string user_id = 3;
+    string user_secret = 4;
+}
+
+message AuthenticateUserResponse {
+    string token = 1;
+}
