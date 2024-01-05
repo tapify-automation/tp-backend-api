@@ -2,10 +2,10 @@ syntax="proto3";
 
 package ro.tapify.v1;
 
-service TransactionSergice {
+service TransactionService {
     rpc InitTransaction(InitTransactionRequest) returns (InitTransactionResponse) {}
     rpc CloseTransaction(CloseTransactionRequest) returns (CloseTransactionResponse) {}
-    rpc GetConsumtion(GetConsumtionRequest) returns (stream GetConsumtionResponse) {}
+    rpc GetConsumption(GetConsumptionRequest) returns (stream GetConsumptionResponse) {}
 }
 
 message InitTransactionRequest {
@@ -27,10 +27,10 @@ message CloseTransactionRequest {
 
 message CloseTransactionResponse {}
 
-message GetConsumtionRequest {
+message GetConsumptionRequest {
     string user_id = 2;
     string transaction_id = 3;
 }
-message GetConsumtionResponse {
+message GetConsumptionResponse {
     double amount = 1;
 }
