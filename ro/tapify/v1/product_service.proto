@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package ro.tapify.v1;
+
+
+service ProductService {
+    rpc GetProductSummary(GetProductSummaryRequest) returns (GetProductSummaryResponse) {}
+}
+
+message GetProductSummaryRequest {
+    string product_id = 1;
+}
+
+message GetProductSummaryResponse {
+    ProductSummary product = 1;
+}
+
+message ProductSummary {
+    string product_id = 1;
+    string name = 2;
+    string description = 3;
+    //base64 encoded image
+    string image = 4;
+    string tenant = 5;
+}
