@@ -22,4 +22,5 @@ message ProductSummary {
     //base64 encoded image
     string image = 4;
     string tenant = 5;
+    double price = 6;
 }
