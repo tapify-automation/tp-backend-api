@@ -5,6 +5,34 @@ package ro.tapify.v1;
 
 service ProductService {
     rpc GetProductSummary(GetProductSummaryRequest) returns (GetProductSummaryResponse) {}
+    rpc CreateProductPackage(CreateProductPackageRequest) returns (CreateProductPackageResponse) {}
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
+}
+
+message CreateProductRequest {
+    string name = 1;
+    string description = 2;
+    //base64 encoded image
+    string image = 3;
+    string tenant_id = 4;
+    double price = 5;
+    string package_id = 6;
+}
+
+message CreateProductResponse {
+    string product_id = 1;
+}
+
+message CreateProductPackageRequest {
+    string name = 1;
+    string tenant = 2;
+    string unit_of_measurement = 3;
+    int32 quantity  = 4;
+    string tenant_id = 5;
+}
+
+message CreateProductPackageResponse {
+    string package_id = 1;
 }
 
 message GetProductSummaryRequest {

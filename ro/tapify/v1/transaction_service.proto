@@ -12,6 +12,7 @@ message InitTransactionRequest {
     string tenant_id = 1;
     string user_id = 2;
     string product_id = 3;
+    //Token is used to start payment process
     string payment_token = 4;
 }
 
