@@ -5,7 +5,6 @@ package ro.tapify.v1;
 service TransactionService {
     rpc InitTransaction(InitTransactionRequest) returns (InitTransactionResponse) {}
     rpc CloseTransaction(CloseTransactionRequest) returns (CloseTransactionResponse) {}
-    // rpc GetConsumption(GetConsumptionRequest) returns (stream GetConsumptionResponse) {}
 }
 
 message InitTransactionRequest {
@@ -27,11 +26,3 @@ message CloseTransactionRequest {
 }
 
 message CloseTransactionResponse {}
-
-message GetConsumptionRequest {
-    string user_id = 2;
-    string transaction_id = 3;
-}
-message GetConsumptionResponse {
-    double amount = 1;
-}
